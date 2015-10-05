@@ -1,3 +1,6 @@
 <?php
-    phpinfo();
-?>
+
+	$host = "localhost";
+	$usuario = "root";
+	$senha = "root";
+	$banco = "escola";
