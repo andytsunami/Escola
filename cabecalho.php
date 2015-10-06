@@ -27,6 +27,23 @@
 					"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
 				});
 				
+				$("#mode_edit").click(function(){
+					console.log("Logando...");
+					$("#form").attr("action", "salva.php");
+					$("#form").submit();
+				});
+				
+				$("#add").click(function(){
+					window.location = "cadastro.php";
+				});
+				
+				$("#view_list").click(function(){
+					window.location = "index.php"
+				});
+				
+				$("#list").click(function(){
+					window.location = "listaAlunos.php"
+				});
 			});
 			
 		</script>
@@ -36,17 +53,17 @@
 		
 		  <nav>
 		    <div class="teal nav-wrapper">
-		      <a href="#!" class="brand-logo">Escola</a>
-		      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons"></i></a>
+		      <a href="index.php" class="brand-logo"><img src="img/logo.png" alt="logo" class="logo"/></a>
+		      <a href="index.php" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 		      <ul class="right hide-on-med-and-down">
-		        <li><a href="#">Listagem de alunos</a></li>
-		        <li><a href="#">Listagem completa de alunos</a></li>
-		        <li><a href="#">Cadastro de alunos</a></li>
+		        <li><a href="index.php">Listagem de alunos</a></li>
+		        <li><a href="listaAlunos.php">Listagem completa de alunos</a></li>
+		        <li><a href="cadastro.php">Cadastro de alunos</a></li>
 		      </ul>
 		      <ul class="side-nav" id="mobile-demo">
-		         <li><a href="#">Listagem de alunos</a></li>
-		        <li><a href="#">Listagem completa de alunos</a></li>
-		        <li><a href="#">Cadastro de alunos</a></li>
+		        <li><a href="index.php">Listagem de alunos</a></li>
+		        <li><a href="listaAlunos.php">Listagem completa de alunos</a></li>
+		        <li><a href="cadastro.php">Cadastro de alunos</a></li>
 		      </ul>
 		    </div>
 		  </nav>

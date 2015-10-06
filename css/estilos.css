@@ -5,3 +5,8 @@ tr th{
 .section h2{
 	padding-top: 50px;
 }
+
+.logo{
+	margin-left: 0.5em;
+    width: 4.4em;
+}
