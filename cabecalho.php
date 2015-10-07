@@ -23,7 +23,7 @@
 		
 		<script type="text/javascript">
 			$(document).ready(function() {
-				$("#table").DataTable({
+				var table = $("#table").DataTable({
 					"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
 				});
 				
@@ -38,12 +38,23 @@
 				});
 				
 				$("#view_list").click(function(){
-					window.location = "index.php"
+					window.location = "index.php";
 				});
 				
 				$("#list").click(function(){
-					window.location = "listaAlunos.php"
+					window.location = "listaAlunos.php";
 				});
+				
+				$("#table tbody").on('click','.remover',function(){
+					var codRa = $(this).parents('tr').attr('id');
+					var linha = $(this).parents('tr');
+					$.post("exclui.php", {ra: codRa}).done(function(data){
+							$(linha).fadeOut("slow",function(){
+								table.row(linha).remove().draw();
+							});
+					});
+				});
+				
 			});
 			
 		</script>

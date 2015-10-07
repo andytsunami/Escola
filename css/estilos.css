@@ -10,3 +10,7 @@ tr th{
 	margin-left: 0.5em;
     width: 4.4em;
 }
+
+.editar, .remover{
+	cursor: pointer;
+}

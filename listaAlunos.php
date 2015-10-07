@@ -33,17 +33,21 @@
 									<th>
 										Email
 									</th>
+									<th>Editar</th>
+									<th>Remover</th>
 								</tr>
 							</thead>
 							<tbody>
 								<?php if ($registros){
 									while($result = mysql_fetch_array($query)){
 								?>
-										<tr>
+										<tr id="<?=$result["RA"]?>">
 											<td><?=$result["RA"]?></td>
 											<td><?=$result["NOME"]?></td>
 											<td><?=$result["CURSO"]?></td>
 											<td><a href="mailto:<?= strtolower($result["EMAIL"])?>"><?= strtolower($result["EMAIL"])?></a></td>
+											<td><i class="material-icons editar">edit</i></td>
+											<td><i class="material-icons remover">delete</i></td>
 										</tr>
 								<?php 
 									}
@@ -64,6 +68,8 @@
 									<th>
 										Email
 									</th>
+									<th>Editar</th>
+									<th>Remover</th>
 								</tr>
 							</tfoot>
 						</table>			
