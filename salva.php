@@ -11,11 +11,21 @@
 	$curso = htmlentities($_POST['curso'],ENT_QUOTES);
 	$email = htmlentities($_POST['email'],ENT_QUOTES);
 	
+	$sql = "";
+	$retorno = "";
 	
-	$sql = "INSERT INTO aluno (NOME, CURSO, EMAIL) VALUES ('".$nome."','".$curso."','".$email."');";
+	if(isset($_POST['RA'])){
+		$ra = $_POST['RA'];
+		$sql =  "UPDATE aluno SET NOME = '{$nome}', CURSO = '{$curso}', EMAIL = '{$email}' WHERE RA = {$ra};";
+		$retorno = "Aluno alterado com sucesso!"; 
+	} else {
+		$sql = "INSERT INTO aluno (NOME, CURSO, EMAIL) VALUES ('".$nome."','".$curso."','".$email."');";
+		$retorno = "Aluno cadastrado com sucesso!";
+	}
+	
 	$query = mysql_query($sql, $conexao);
 	
-	$retorno = "Aluno cadastrado com sucesso!";  
+	  
 	header("Location: listaAlunos.php");
 	
 ?>

@@ -4,7 +4,7 @@
 	mysql_set_charset("utf8", $conexao);
 	
 	mysql_select_db($banco);
-	$sql = "SELECT RA,NOME,CURSO,EMAIL FROM aluno order by nome ASC;";
+	$sql = "SELECT RA,NOME,CURSO,EMAIL FROM aluno order by nome DESC;";
 	$query = mysql_query($sql, $conexao);
 	
 	$registros = mysql_num_rows($query); 

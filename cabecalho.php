@@ -55,6 +55,11 @@
 					});
 				});
 				
+				$("#table tbody").on('click','.editar',function(){
+					var codRa = $(this).parents('tr').attr('id');
+					window.location = "cadastro.php?ra="+codRa;
+				});
+				
 			});
 			
 		</script>
