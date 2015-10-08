@@ -5,17 +5,17 @@
 		<!--Import Google Icon Font-->
 	    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	    <!--Import materialize.css-->
-	    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css"  media="screen,projection"/>
 	
 	    <!--Let browser know website is optimized for mobile-->
       	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       	
       	<!--Import jQuery before materialize.js-->
-      	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-      	<script type="text/javascript" src="js/materialize.min.js"></script>
+      	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
       	
-      	<script type="text/javascript" src="js/datatables.min.js"></script>
-      	<link type="text/css" rel="stylesheet" href="css/datatables.min.css"  media="screen,projection"/>
+      	<script type="text/javascript" src="https://cdn.datatables.net/r/dt/dt-1.10.9/datatables.min.js"></script>
+      	<link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/r/dt/dt-1.10.9/datatables.min.css"  media="screen,projection"/>
 		
 		<link type="text/css" rel="stylesheet" href="css/estilos.css"  media="screen,projection"/>
 		
@@ -24,7 +24,8 @@
 		<script type="text/javascript">
 			$(document).ready(function() {
 				var table = $("#table").DataTable({
-					"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
+					"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+					"order": [[ 0, "desc" ]]
 				});
 				
 				$("#mode_edit").click(function(){
