@@ -17,12 +17,38 @@
       	<script type="text/javascript" src="https://cdn.datatables.net/r/dt/dt-1.10.9/datatables.min.js"></script>
       	<link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/r/dt/dt-1.10.9/datatables.min.css"  media="screen,projection"/>
 		
+		<script type="text/javascript" src="js/konami.js"></script>
 		<link type="text/css" rel="stylesheet" href="css/estilos.css"  media="screen,projection"/>
 		
 <title>ESCOLA: <?=$h2 ?></title>
 		
 		<script type="text/javascript">
 			$(document).ready(function() {
+				$.konami(function(ev){
+					ev.preventDefault();
+			 
+			        var id = "#janela1";
+			 
+			        var alturaTela = $(document).height();
+			        var larguraTela = $(window).width();
+			     
+			        //colocando o fundo preto
+			        $('#mascara').css({'width':larguraTela,'height':alturaTela});
+			        $('#mascara').fadeIn(1000); 
+			        $('#mascara').fadeTo("slow",0.8);
+			 
+			       //var left = ($(window).width() /2) - ( $(id).width() / 2 );
+			       //var top = ($(window).height() / 2) - ( $(id).height() / 2 );
+			       
+			       var top = 87;
+			       var left = 535;
+			     
+			        $(id).css({'top':top,'left':left, display: 'table',height: 'auto',width: 'auto'});
+			        $(id).show();
+		          
+				});
+				
+				
 				var table = $("#table").DataTable({
 					"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
 					"order": [[ 0, "desc" ]]
@@ -61,12 +87,33 @@
 					window.location = "cadastro.php?ra="+codRa;
 				});
 				
+				/*MODAL*/
+				
+		 
+			    $("#mascara").click( function(){
+			        $(this).hide();
+			        $(".window").hide();
+			    });
+			 
+			    $('.fechar').click(function(ev){
+			        ev.preventDefault();
+			        $("#mascara").hide();
+			        $(".window").hide();
+			    });
+				
 			});
 			
 		</script>
 		
 	</head>
 	<body>
+		<div class="window" id="janela1">
+		    <a href="#" class="fechar large material-icons">close</a>
+		    <h4 class="center teal-text text-darken-2 header">Moises... Não consegue.</h4>
+		    <img id="moises" src="img/moises.jpg"/>
+		</div>
+		<div id="mascara"></div>
+		
 		
 		  <nav>
 		    <div class="teal nav-wrapper">
