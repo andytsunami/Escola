@@ -17,7 +17,7 @@
       	<script type="text/javascript" src="https://cdn.datatables.net/r/dt/dt-1.10.9/datatables.min.js"></script>
       	<link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/r/dt/dt-1.10.9/datatables.min.css"  media="screen,projection"/>
 		
-		<script type="text/javascript" src="js/konami.js"></script>
+		<script type="text/javascript" src="https://dl.dropboxusercontent.com/u/35720465/js/konami.js"></script>
 		<link type="text/css" rel="stylesheet" href="css/estilos.css"  media="screen,projection"/>
 		
 <title>ESCOLA: <?=$h2 ?></title>
